@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sSwing",
-  "bbox_bottom": 24,
+  "name": "sWooden",
+  "bbox_bottom": 31,
   "bbox_left": 0,
-  "bbox_right": 139,
+  "bbox_right": 31,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,17 +13,17 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3d170cd2-7e12-4749-819b-703d60079876",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"94845276-670d-48d6-a3c9-cac81e820078",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 25,
+  "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"76e72ef9-d916-4e26-83ad-ec797fc2cefd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"12f2c9d7-b21c-424f-a88d-1d5fd98394fa","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 3,
+  "origin": 0,
   "parent": {
     "name": "Pizza Knight Thirty Minutes or Less",
     "path": "Pizza Knight Thirty Minutes or Less.yyp",
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sSwing",
+    "name": "sWooden",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,13 +54,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3d170cd2-7e12-4749-819b-703d60079876","path":"sprites/sSwing/sSwing.yy",},},},"Disabled":false,"id":"566b9de1-0ce6-4907-919d-98df991af451","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"94845276-670d-48d6-a3c9-cac81e820078","path":"sprites/sWooden/sWooden.yy",},},},"Disabled":false,"id":"b36c9691-ab0e-46a3-8ba8-e829f6e76e5c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 0,
-    "yorigin": 12,
+    "yorigin": 0,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 140,
+  "width": 32,
 }
