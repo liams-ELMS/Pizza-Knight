@@ -8,11 +8,16 @@ if (oPlayer.state < 2)
 	image_angle = point_direction(x,y, mouse_x,mouse_y)
 
 	// Attack towards mouse
-	firingdelay--;
-	if (mouse_check_button(mb_left)) && (firingdelay < 0)
+	if (firingdelay > 0) firingdelay--;
+	if (mouse_check_button(mb_left)) && (firingdelay <= 0)
 	{
 		firingdelay = 30;
-		with (instance_create_layer(x,y,"Swing",oSwing))
+		with (instance_create_layer(x,y,"Swing", oSwing))
+		{
+			direction = other.image_angle;
+			image_angle = direction;
+		}
+		with (instance_create_layer(x + lengthdir_x(180, image_angle), y + lengthdir_y(180, image_angle), "Swing", oSweet))
 		{
 			direction = other.image_angle;
 			image_angle = direction;
@@ -35,3 +40,7 @@ if (oPlayer.state = 3) //walls
 	else if (image_angle >= 105) and (image_angle <= 255) image_angle = 180; // Right side
 	else oPlayer.state = 1 // Angle too steep, bail
 }
+
+// Move lance towards mouse during attack
+x = x + lengthdir_x(firingdelay*2, image_angle);
+y = y + lengthdir_y(firingdelay*2, image_angle);

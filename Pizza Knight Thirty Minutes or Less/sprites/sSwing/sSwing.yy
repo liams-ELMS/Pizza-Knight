@@ -4,7 +4,7 @@
   "name": "sSwing",
   "bbox_bottom": 24,
   "bbox_left": 0,
-  "bbox_right": 139,
+  "bbox_right": 194,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 3,
   "parent": {
-    "name": "Pizza Knight Thirty Minutes or Less",
-    "path": "Pizza Knight Thirty Minutes or Less.yyp",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 140,
+  "width": 195,
 }

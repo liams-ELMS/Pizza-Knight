@@ -4,9 +4,6 @@ var _keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
 var _keyJump = keyboard_check(vk_space) || keyboard_check(vk_up) || keyboard_check(ord("W"));
 var _keyDuck = keyboard_check(vk_down) || keyboard_check(ord("S"));
 
-// test space
-//var _charging = keyboard_check(ord("C")); 
-//if (_charging) state = 2;
 
 // Determine Direction
 var _dir = _keyRight - _keyLeft
@@ -46,7 +43,7 @@ else if (state = 1) // Aerial Movement
 	vsp = vsp + grv;
 }
 
-else if (state = 2)
+else if (state = 2) // Stuck in Wall
 {
 	// Stick the player in place
 	hsp = 0
@@ -60,7 +57,7 @@ else if (state = 2)
 	if (mouse_check_button(mb_left)) && (charging = 1) { hsp = charge * 0.8; charge = 0; charging = 0; state = 1; }
 }
 
-else if (state = 3)
+else if (state = 3) // Stuck in Floor/Ceiling
 {
 	// Stick the player in place
 	hsp = 0
@@ -72,6 +69,32 @@ else if (state = 3)
 	
 	// Fling player
 	if (mouse_check_button(mb_left)) && (charging = 1) { vsp = charge * 0.8; charge = 0; charging = 0; state = 1; }
+}
+
+else if (state = 4) // Damage State
+{
+	// Moving Right
+	if (invuln = 120)
+	{
+		if (oPlayer.hsp > 0) 
+		{ 
+			hsp = -2;
+			vsp = -6;
+		}
+	
+		else
+		{ 
+			hsp = 2; 
+			vsp = -6;
+		}
+		invuln--;
+	}
+	else if (invuln = 90)
+	{
+		state = 1;
+	}
+	// Gravity
+	vsp = vsp + grv;
 }
 
 // Figure out if we can jump
@@ -105,3 +128,7 @@ if (place_meeting(x, y + vsp, oWall))
 	vsp = 0;
 }
 y += vsp;
+
+if (invuln < 120 and invuln >= 0) invuln--;	
+
+else if (invuln = -1) invuln = 120;
