@@ -8,6 +8,9 @@ var _keyDuck = keyboard_check(vk_down) || keyboard_check(ord("S"));
 // Determine Direction
 var _dir = _keyRight - _keyLeft
 
+// Check if dying
+if (curHealth <= 0) state = 5; 
+
 if (state = 0) // Grounded movement
 {
 	// Gradually slow down the player to 0 speed
@@ -97,6 +100,33 @@ else if (state = 4) // Damage State
 	vsp = vsp + grv;
 }
 
+else if (state = 5) // Dying
+{
+	// Stop timer
+	global.timerstart = false;
+	invuln = 1
+	
+	// Count down
+	deadTimer--;
+	
+	// Rapid timer increase (5 minutes total)
+	global.timer += 60
+	
+	// Return to gameplay
+	if (deadTimer <= 0)
+	{
+		state = 1;
+		deadTimer = 300;
+		curHealth = maxHealth;
+		invuln = 119;
+		global.timerstart = true;
+	}
+	
+	// Gravity
+	vsp = vsp + grv;
+	hsp = 0;
+}
+
 // Figure out if we can jump
 if (canJump-- > 0) && (state < 2)
 {
@@ -129,6 +159,6 @@ if (place_meeting(x, y + vsp, oWall))
 }
 y += vsp;
 
-if (invuln < 120 and invuln >= 0) invuln--;	
+if (invuln < 120 and invuln >= 0) invuln--;
 
 else if (invuln = -1) invuln = 120;

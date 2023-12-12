@@ -11,3 +11,6 @@ charging = 0;	// Know when to release charge
 maxHealth = 8;	// Maximum health
 curHealth = 8;	// Current health
 invuln = 120;	// How long the player cannot be hit after taking damage
+deadTimer = 300;// How long it takes for revive
+
+global.timerstart = true;	//Starts the timer

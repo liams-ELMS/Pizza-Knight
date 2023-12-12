@@ -25,7 +25,7 @@ if (oPlayer.state < 2)
 	}
 }
 
-if (oPlayer.state = 2) //floors
+else if (oPlayer.state = 2) //floors
 {
 	oPlayer.x = x
 	if (image_angle >= 15) and (image_angle <= 165) image_angle = 90; // Stuck to ceiling
@@ -33,13 +33,16 @@ if (oPlayer.state = 2) //floors
 	else oPlayer.state = 1 // Angle too steep, bail
 }
 
-if (oPlayer.state = 3) //walls
+else if (oPlayer.state = 3) //walls
 { 
 	oPlayer.y = y
 	if (image_angle >= 0) and (image_angle <= 75) or (image_angle >= 285) and (image_angle <= 360) image_angle = 0; // Left side
 	else if (image_angle >= 105) and (image_angle <= 255) image_angle = 180; // Right side
 	else oPlayer.state = 1 // Angle too steep, bail
 }
+
+else if (oPlayer.state = 5) image_angle = 180;
+
 
 // Move lance towards mouse during attack
 x = x + lengthdir_x(firingdelay*2, image_angle);
